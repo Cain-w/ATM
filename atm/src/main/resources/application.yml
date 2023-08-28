@@ -1,0 +1,47 @@
+server:
+  port: 8001
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+  info:
+    env:
+      enable: true
+
+logging:
+  level:
+    root: info
+    bob.homework: DEBUG
+    org.springframework.cloud.loadbalancer: debug
+
+feign:
+  client:
+    config:
+      atm:
+        loggerLevel: full
+#        request-interceptors:
+#          - bob.homework.atm.feign.
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/bob_atm?useSSL=false
+    username: root
+    password: wzy960416
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: atm
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      discovery:
+        namespace: 29a13bd4-a24f-4c55-920e-699c8f543d50
+      config:
+        import-check:
+          enabled: false
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: bob.homework.atm.mybatis.entity

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//OTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="bob.homework.atm.mapper.BankCardMapper">
+    <select id="getAllId">
+        SELECT id From bankcard
+    </select>
+    <select id="getBankCard">
+        SELECT * From bankcard WHERE id = #{id}
+    </select>
+    <update id="saveMoney">
+        UPDATE bankcard SET balance = balance + #{money} WHERE id = #{bankCardId}
+    </update>
+
+    <update id="bringMoney">
+        UPDATE bankcard SET balance = balance - #{money} WHERE id = #{bankCardId}
+    </update>
+
+
+
+</mapper>

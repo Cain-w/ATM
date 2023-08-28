@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//OTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="bob.homework.atm.mapper.ConsumerMapper">
+    <select id="getConsumer">
+        SELECT * From consumer WHERE id = #{id}
+    </select>
+</mapper>

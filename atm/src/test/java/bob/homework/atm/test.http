@@ -1,0 +1,12 @@
+GET http://localhost:8001/getBalance
+Accept: application/json
+
+###
+###
+POST http://localhost:8001/authorization/2/12345678
+Content-Type: application/json
+
+{}
+
+
+
